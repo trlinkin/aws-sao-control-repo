@@ -7,6 +7,10 @@ class profile::platform::baseline::linux::firewall (
     require => Class['profile::platform::baseline::linux::firewall_pre'],
   }
 
+  File[['/etc/sysconfig/ip6tables','/etc/sysconfig/iptables']] ->
+  Firewall <||> ->
+  Service[['iptables','ip6tables']]
+
   class { ['::profile::platform::baseline::linux::firewall_pre', '::profile::platform::baseline::linux::firewall_post']: }
 
   resources { 'firewall':
