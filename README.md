@@ -1,4 +1,4 @@
-Puppet SE Demo Environment
+Puppet SE Demo Environment 1
 ==========================
 
 This is the control-repo used by the Puppet SE team.
