@@ -1,6 +1,6 @@
 forge "http://forge.puppetlabs.com"
 
-# Modules from the Puppet Forge
+# Modules from the Puppet Forge 1
 # Versions should be updated to be the latest at the time you start
 mod 'puppetlabs-acl', '2.0.1'
 mod 'puppetlabs-apache', '2.3.0'
