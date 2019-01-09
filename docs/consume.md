@@ -1,4 +1,4 @@
-Consume
+Consume 1
 =======
 
 ## How to get it
