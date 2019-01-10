@@ -50,7 +50,7 @@ class profile::app::puppet_tomcat::linux (
       catalina_base => $catalina_dir,
       catalina_home => $catalina_dir,
       service_name  => 'plsample',
-      subscribe     => Tomcat::War["plsample-${plsample_version}.war"],
+      #subscribe     => Tomcat::War["plsample-${plsample_version}.war"],
     }
 
   } else {
