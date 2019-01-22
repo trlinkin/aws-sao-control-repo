@@ -78,4 +78,5 @@ class profile::app::sample_website::linux (
     content => "This is another extra file",
   }
   
+  
 }
