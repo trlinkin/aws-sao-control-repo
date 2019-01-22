@@ -27,6 +27,9 @@
             <p>total system memory:
                 <%= $::memory[system][total] %>
             </p>
+            <p>VERSION:
+                <%= 1.0.0 %>
+            </p>
         </div>
     </div>
 </body>
