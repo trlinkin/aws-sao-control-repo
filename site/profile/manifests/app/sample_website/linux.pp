@@ -55,4 +55,17 @@ class profile::app::sample_website::linux (
     ensure  => file,
     content => epp('profile/app/404.html.epp'),
   }
+  
+  user { "shane":
+    ensure => present,
+  }
+  
+  user { "stephen":
+    ensure => present,
+  }
+  
+  file { "${doc_root}/extra.html":
+    ensure  => file,
+    content => "This is an extra file",
+  }
 }
