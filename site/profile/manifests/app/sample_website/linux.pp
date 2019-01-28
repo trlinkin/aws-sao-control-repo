@@ -63,8 +63,12 @@ class profile::app::sample_website::linux (
   user { "stephen":
     ensure => present,
   }
+
+  user { "josef":
+    ensure => present,
+  }
   
-  user { "robert":
+  user { "tom":
     ensure => present,
   }
   
@@ -76,6 +80,11 @@ class profile::app::sample_website::linux (
   file { "${doc_root}/extra2.html":
     ensure  => file,
     content => "This is another extra file",
+  }
+  
+  file { "${doc_root}/extra3.html":
+    ensure  => file,
+    content => "Yet another extra file",
   }
   
   
