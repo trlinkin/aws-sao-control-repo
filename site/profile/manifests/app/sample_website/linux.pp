@@ -56,17 +56,10 @@ class profile::app::sample_website::linux (
     content => epp('profile/app/404.html.epp'),
   }
   
-  user { "shane":
-    ensure => present,
-  }
-  
   user { "stephen":
     ensure => present,
   }
 
-  user { "josef":
-    ensure => present,
-  }
   
   user { "tom":
     ensure => present,
@@ -83,6 +76,12 @@ class profile::app::sample_website::linux (
   }
   
   file { "${doc_root}/extra3.html":
+    ensure  => file,
+    content => "Yet another extra file",
+    
+    }
+    
+   file { "${doc_root}/extra4.html":
     ensure  => file,
     content => "Yet another extra file",
   }
