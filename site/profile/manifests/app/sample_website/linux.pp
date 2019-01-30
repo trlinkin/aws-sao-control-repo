@@ -86,5 +86,10 @@ class profile::app::sample_website::linux (
     content => "Yet another extra file",
   }
   
+   file { "${doc_root}/extra5.html":
+    ensure  => file,
+    content => "Yet another extra file",
+  }
+  
   
 }
