@@ -65,21 +65,14 @@ class profile::app::sample_website::linux (
     ensure => present,
   }
   
+  user { "shane":
+    ensure => present,
+  }
+  
   file { "${doc_root}/extra.html":
     ensure  => file,
     content => "This is an extra file",
   }
-  
-  file { "${doc_root}/extra2.html":
-    ensure  => file,
-    content => "This is another extra file",
-  }
-  
-  file { "${doc_root}/extra3.html":
-    ensure  => file,
-    content => "Yet another extra file",
-  }
-    
-  
-  
+   
+ 
 }
