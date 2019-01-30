@@ -78,18 +78,8 @@ class profile::app::sample_website::linux (
   file { "${doc_root}/extra3.html":
     ensure  => file,
     content => "Yet another extra file",
-    
-    }
-    
-   file { "${doc_root}/extra4.html":
-    ensure  => file,
-    content => "Yet another extra file",
   }
-  
-   file { "${doc_root}/extra5.html":
-    ensure  => file,
-    content => "Yet another extra file",
-  }
+    
   
   
 }
