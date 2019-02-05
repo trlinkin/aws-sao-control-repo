@@ -1,4 +1,4 @@
-class profile::app::fsbo  {
+class profile::app::fsbo {
 
   $iis_features = [
     'Web-Server',
@@ -28,23 +28,23 @@ file { 'c:\\inetpub\\wwwroot\\famis\\portal':
       start_mode              => 'OnDemand',
       identity_type           => 'SpecificUser',
       user_name               => 'Administrator',
-      password                => $password,
+      password                => 'password',
 }
 
 iis_virtual_directory { 'portal':
-     ensure                  => 'present',
-     sitename                => 'Default Web Site\famis',
-     physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
-     user_name               => 'Administrator',
-     password                => $password,
-     require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  ensure                  => 'present',
+  sitename                => 'Default Web Site\famis',
+  physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
+  user_name               => 'Administrator',
+  password                => 'password',
+  require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
     }
 
-iis_application {'portal':
-     ensure                   => 'present',
-     virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
-     applicationpool          => 'famis',
-     require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
-    }
+iis_application { 'portal':
+  ensure => 'present',
+  virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
+  applicationpool          => 'famis',
+  require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  }
 
 }
