@@ -67,7 +67,7 @@ file { 'c:\\inetpub\\wwwroot\\famis\\portal':
 iis_application { 'portal':
   ensure => 'present',
   #virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
-  sitename => 'Default Web Site\famis\portal',
+  sitename => 'portal',
   #virtual_directory        => 'c:\\inetpub\\wwwroot\\famis\\portal',
   applicationpool          => 'famis',
   require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
