@@ -21,10 +21,10 @@ file { 'c:\\inetpub\\wwwroot\\famis':
   require => File['c:\\inetpub\\wwwroot'],
 }
 
-#file { 'c:\\inetpub\\wwwroot\\famis\\portal':
-#  ensure => 'directory',
-#  require => File['c:\\inetpub\\wwwroot\\famis'],
-#}
+file { 'c:\\inetpub\\wwwroot\\famis\\portal':
+  ensure => 'directory',
+  require => File['c:\\inetpub\\wwwroot\\famis'],
+}
 
 #iis_site { 'Default Web Site':
 #  ensure          => 'started',
