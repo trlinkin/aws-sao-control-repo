@@ -12,9 +12,9 @@ iis_feature { $iis_features:
   ensure => 'present',
 }
 
-file { 'c:\\inetpub\\wwwroot\\famis':
-  ensure => 'directory'
-}
+#file { 'c:\\inetpub\\wwwroot\\famis':
+#  ensure => 'directory'
+#}
 
 #file { 'c:\\inetpub\\wwwroot\\famis\\portal':
 #  ensure => 'directory'
