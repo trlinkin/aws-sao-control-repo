@@ -47,14 +47,14 @@ iis_virtual_directory { 'portal':
   physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
   user_name               => 'Administrator',
   password                => 'password',
-  require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  #require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
     }
 
 iis_application { 'portal':
   ensure => 'present',
   virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
   applicationpool          => 'famis',
-  require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  #require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
   }
 
 }
