@@ -20,6 +20,15 @@ file { 'c:\\inetpub\\wwwroot\\famis\\portal':
   ensure => 'directory'
 }
 
+iis_site { 'Default Web Site':
+  ensure          => 'started',
+  physicalpath    => 'c:\\inetpub\\wwwroot',
+  applicationpool => 'famis',
+  require => Iis_feature['Web-WebServer'],
+}
+
+
+
     iis_application_pool { 'famis':
       ensure                  => 'present',
       state                   => 'started',
