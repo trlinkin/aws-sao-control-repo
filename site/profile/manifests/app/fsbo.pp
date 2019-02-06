@@ -12,19 +12,19 @@ iis_feature { $iis_features:
   ensure => 'present',
 }
 
-file { 'c:\\inetpub\\wwwroot':
-  ensure => 'directory',
-}
+#file { 'c:\\inetpub\\wwwroot':
+#  ensure => 'directory',
+#}
 
-file { 'c:\\inetpub\\wwwroot\\famis':
-  ensure => 'directory',
-  require => File['c:\\inetpub\\wwwroot'],
-}
+#file { 'c:\\inetpub\\wwwroot\\famis':
+#  ensure => 'directory',
+#  require => File['c:\\inetpub\\wwwroot'],
+#}
 
-file { 'c:\\inetpub\\wwwroot\\famis\\portal':
-  ensure => 'directory',
-  require => File['c:\\inetpub\\wwwroot\\famis'],
-}
+#file { 'c:\\inetpub\\wwwroot\\famis\\portal':
+#  ensure => 'directory',
+#  require => File['c:\\inetpub\\wwwroot\\famis'],
+#}
 
 # iis_site { 'Default Web Site':
 #  ensure          => 'started',
@@ -52,7 +52,7 @@ iis_virtual_directory { 'portal':
   physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
   user_name               => 'Administrator',
   password                => 'password',
-  require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  #require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
   
 }
 
@@ -61,7 +61,8 @@ iis_application { 'portal':
   virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
   #virtual_directory        => 'c:\\inetpub\\wwwroot\\famis\\portal',
   applicationpool          => 'famis',
-  require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  #require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  enabledprotocols => 'http',
   }
 
 }
