@@ -70,7 +70,7 @@ iis_application { 'portal':
   #virtual_directory        => 'c:\\inetpub\\wwwroot\\famis\\portal',
   applicationpool          => 'famis',
   #require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
-  require                   => Iis_Virtual_Directory['famis'],
+  #require                   => Iis_Virtual_Directory['famis'],
   enabledprotocols => 'http',
   }
 
