@@ -27,7 +27,7 @@ file { 'c:\\inetpub\\wwwroot':
 iis_site { 'Default Web Site':
   ensure          => 'started',
   physicalpath    => 'c:\\inetpub\\wwwroot',
-  applicationpool => 'famis',
+  applicationpool => 'DefaultAppPool',
   preloadenabled => true,
   require => File['c:\\inetpub\\wwwroot'],
 }
