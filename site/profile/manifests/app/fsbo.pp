@@ -22,8 +22,9 @@ file { 'c:\\inetpub\\wwwroot\\famis\\portal':
 
 iis_site { 'Default Web Site':
   ensure          => 'started',
-  physicalpath    => 'c:\\inetpub\\wwwroot',
+  physicalpath    => 'c:\\inetpub\\wwwroot\\famis',
   applicationpool => 'famis',
+  preloadenabled => true,
   require => Iis_feature['Web-WebServer'],
 }
 
