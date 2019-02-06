@@ -33,32 +33,32 @@ iis_site { 'Default Web Site':
 }
 
 
-    iis_application_pool { 'famis':
-      ensure                  => 'present',
-      state                   => 'started',
-      managed_pipeline_mode   => 'Integrated',
-      managed_runtime_version => 'v4.0',
-      start_mode              => 'OnDemand',
-      identity_type           => 'SpecificUser',
-      user_name               => 'Administrator',
-      password                => 'password',
-}
+#    iis_application_pool { 'famis':
+#      ensure                  => 'present',
+#      state                   => 'started',
+#      managed_pipeline_mode   => 'Integrated',
+#      managed_runtime_version => 'v4.0',
+#      start_mode              => 'OnDemand',
+#      identity_type           => 'SpecificUser',
+#      user_name               => 'Administrator',
+#      password                => 'password',
+#}
 
-iis_virtual_directory { 'portal':
-  ensure                  => 'present',
-  sitename                => 'Default Web Site\famis',
-  physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
-  user_name               => 'Administrator',
-  password                => 'password',
+#iis_virtual_directory { 'portal':
+#  ensure                  => 'present',
+#  sitename                => 'Default Web Site\famis',
+#  physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
+#  user_name               => 'Administrator',
+#  password                => 'password',
   #require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
   
-    }
+#    }
 
-iis_application { 'portal':
-  ensure => 'present',
-  virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
-  applicationpool          => 'famis',
+#iis_application { 'portal':
+#  ensure => 'present',
+#  virtual_directory        => "IIS:\\Sites\\Default Web Site\\famis\\portal",
+#  applicationpool          => 'famis',
   #require                  => File['c:\\inetpub\\wwwroot\\famis\\portal'],
-  }
+#  }
 
 }
