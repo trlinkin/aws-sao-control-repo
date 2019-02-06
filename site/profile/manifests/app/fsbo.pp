@@ -46,14 +46,14 @@ file { 'c:\\inetpub\\wwwroot\\famis\\portal':
       password                => 'password',
 }
 
-iis_virtual_directory { 'famis':
-  ensure                  => 'present',
-  sitename                => 'Default Web Site',
-  physicalpath            => 'c:\\inetpub\\wwwroot\\famis',
-  user_name               => 'Administrator',
-  password                => 'password',
-  require      =>       File['c:\\inetpub\\wwwroot\\famis'],
-}
+#iis_virtual_directory { 'famis':
+#  ensure                  => 'present',
+#  sitename                => 'Default Web Site',
+#  physicalpath            => 'c:\\inetpub\\wwwroot\\famis',
+#  user_name               => 'Administrator',
+#  password                => 'password',
+#  require      =>       File['c:\\inetpub\\wwwroot\\famis'],
+#}
 
 #iis_virtual_directory { 'portal':
 #  ensure                  => 'present',
