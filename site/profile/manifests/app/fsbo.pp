@@ -12,6 +12,10 @@ iis_feature { $iis_features:
   ensure => 'present',
 }
 
+file { 'c:\\inetpub\\wwwroot':
+  ensure => 'directory'
+}
+
 #file { 'c:\\inetpub\\wwwroot\\famis':
 #  ensure => 'directory'
 #}
@@ -22,12 +26,12 @@ iis_feature { $iis_features:
 
 iis_site { 'Default Web Site':
   ensure          => 'started',
-  physicalpath    => 'c:\\inetpub\\wwwroot\\famis',
+  physicalpath    => 'c:\\inetpub\\wwwroot',
   applicationpool => 'famis',
   preloadenabled => true,
   require => Iis_feature['Web-WebServer'],
+  require => File['c:\\inetpub\\wwwroot'],
 }
-
 
 
     iis_application_pool { 'famis':
@@ -48,6 +52,7 @@ iis_virtual_directory { 'portal':
   user_name               => 'Administrator',
   password                => 'password',
   #require      =>       File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  
     }
 
 iis_application { 'portal':
