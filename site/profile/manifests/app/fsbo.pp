@@ -16,9 +16,9 @@ file { 'c:\\inetpub\\wwwroot\\famis':
   ensure => 'directory'
 }
 
-file { 'c:\\inetpub\\wwwroot\\famis\\portal':
-  ensure => 'directory'
-}
+#file { 'c:\\inetpub\\wwwroot\\famis\\portal':
+#  ensure => 'directory'
+#}
 
 iis_site { 'Default Web Site':
   ensure          => 'started',
