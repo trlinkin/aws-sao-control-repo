@@ -29,7 +29,7 @@ iis_site { 'Default Web Site':
   physicalpath    => 'c:\\inetpub\\wwwroot',
   applicationpool => 'famis',
   preloadenabled => true,
-  require => [ 'Iis_feature['Web-WebServer']', 'File['c:\\inetpub\\wwwroot']', ],
+  require => [ Iis_feature['Web-WebServer'], File['c:\\inetpub\\wwwroot'], ],
 }
 
 
