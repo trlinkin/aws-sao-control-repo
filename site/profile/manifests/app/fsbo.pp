@@ -53,7 +53,7 @@ iis_application_pool { 'famis':
 #}
 
  
- iis_application { 'Default Web Site\famis':
+ iis_application { 'Default Web Site\famis/portal':
   ensure             => 'present',
   applicationpool    => 'famis',
   applicationname    => 'portal',
@@ -73,7 +73,7 @@ iis_application_pool { 'famis':
 
 iis_virtual_directory { 'portal':
      ensure                  => 'present',
-     sitename                => 'Default Web Site',
+     sitename                => "'Default Web Site\famis'",
      physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
      user_name               => 'Administrator',
      password                => 'password',
