@@ -30,8 +30,8 @@ iis_application_pool { 'famis':
       managed_runtime_version => 'v4.0',
       start_mode              => 'OnDemand',
       identity_type           => 'SpecificUser',
-      user_name               => 'Administrator',
-      password                => 'password',
+#      user_name               => 'Administrator',
+#      password                => 'password',
 }
 
 iis_virtual_directory { 'famis\portal':
