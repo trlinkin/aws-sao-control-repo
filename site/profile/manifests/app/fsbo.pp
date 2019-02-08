@@ -53,12 +53,12 @@ exec { 'convert':
 }
 
 
-iis_application { 'Default Web Site\famis/portal':
+iis_application { 'portal':
   ensure             => 'present',
   applicationpool    => 'famis',
   #applicationname    => 'portal',
   enabledprotocols   => 'http',
-  virtual_directory   => "'Default Web Site\\famis\\portal'",
+  virtual_directory   => "IIS:Sites\\Default Web Site\\famis\\portal"',
   require           => Exec['convert'],
 }
 
