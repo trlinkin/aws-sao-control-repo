@@ -30,8 +30,8 @@ iis_application_pool { 'famis':
       managed_runtime_version => 'v4.0',
       start_mode              => 'OnDemand',
       identity_type           => 'SpecificUser',
-#      user_name               => 'Administrator',
-#      password                => 'password',
+      user_name               => 'Administrator',
+      password                => 'password',
 }
 
 iis_virtual_directory { 'famis\portal':
@@ -41,26 +41,16 @@ iis_virtual_directory { 'famis\portal':
   sitename     => 'Default Web Site',
   user_name    => 'Administrator',
   password     => 'password',
+  require      => Iis_Application_Pool['famis'],
   notify       => Exec['convert'],
 }
 
 exec { 'convert':
-  command => 'ConvertTo-WebApplication "IIS:Sites\\Default Web Site\famis\portal"',
+  command => 'ConvertTo-WebApplication "IIS:Sites\\Default Web Site\famis\portal" -ApplicationPool famis',
   unless => 'Get-WebApplication | findstr portal',
   provider => powershell,
   require => Iis_Virtual_Directory['famis\portal'],
   notify => Iis_Application['portal'],
 }
-
-
-iis_application { 'portal':
-  ensure             => 'present',
-  applicationpool    => 'famis',
-  #applicationname    => 'portal',
-  enabledprotocols   => 'http',
-  virtual_directory   => "IIS:Sites\\Default Web Site\\famis\\portal",
-  require           => Exec['convert'],
-}
-
 
 }
