@@ -46,7 +46,7 @@ iis_virtual_directory { 'famis\portal':
 exec { 'convert':
   command => 'ConvertTo-WebApplication "IIS:Sites\Default Web Site\famis\portal"',
   provider => powershell,
-  unless => 'Get-WebApplication',
+  #unless => 'Get-WebApplication',
   require => Iis_Virtual_Directory['famis\portal'],
 }
 
