@@ -34,40 +34,6 @@ iis_application_pool { 'famis':
       password                => 'password',
 }
 
-#iis_application { 'portal':
-#  ensure             => 'present',
-#  applicationpool    => 'famis',
-#  applicationname    => 'portal',
-#  authenticationinfo => {
-#  'iisClientCertificateMapping' => false,
-#  'clientCertificateMapping' => false,
-#  'anonymous' => true,
-#  'basic' => false,
-#  'windows' => false
-#   },
-#  enabledprotocols   => 'http',
-#  physicalpath       => 'C:\\inetpub\\wwwroot\\famis\\portal',
-#  sitename           => 'Default Web Site',
-#  #virtual_directory   => "IIS:\\Sites\\Default Web Site\\famis\\portal",
-#  require           => Iis_Virtual_Directory['portal'],
-#}
-
-iis_application { 'Default Web Site\famis/portal':
-  ensure             => 'present',
-  applicationpool    => 'famis',
-  applicationname    => 'portal',
-  authenticationinfo => {
-  'iisClientCertificateMapping' => false,
-  'clientCertificateMapping' => false,
-  'anonymous' => true,
-  'basic' => false,
-  'windows' => false
-   },
-  enabledprotocols   => 'http',
-  virtual_directory   => "'Default Web Site\\famis\\portal'",
-  require           => Iis_Virtual_Directory['famis\portal'],
-}
- 
 iis_virtual_directory { 'famis\portal':
   ensure       => 'present',
   application  => '/',
@@ -76,5 +42,13 @@ iis_virtual_directory { 'famis\portal':
   user_name    => 'Administrator',
   password     => 'password',
 }
+
+exec { 'convert':
+  command => 'ConvertTo-WebApplication "IIS:Sites\Default Web Site\famis\portal"',
+  provider => powershell,
+  unless => 'Get-WebApplication',
+  require => Iis_Virtual_Directory['famis\portal'],
+}
+
 
 }
