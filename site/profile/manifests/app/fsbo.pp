@@ -58,7 +58,7 @@ iis_application { 'portal':
   applicationpool    => 'famis',
   #applicationname    => 'portal',
   enabledprotocols   => 'http',
-  virtual_directory   => '"IIS:Sites\\Default Web Site\\famis\\portal"',
+  virtual_directory   => "IIS:Sites\\Default Web Site\\famis\\portal",
   require           => Exec['convert'],
 }
 
