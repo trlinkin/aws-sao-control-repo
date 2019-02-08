@@ -37,7 +37,7 @@ iis_application_pool { 'famis':
 iis_application { 'Default Web Site\famis/portal':
   ensure             => 'present',
   applicationpool    => 'famis',
-  applicationname    => '/portal'
+  applicationname    => '/portal',
   authenticationinfo => {
   'iisClientCertificateMapping' => false,
   'clientCertificateMapping' => false,
