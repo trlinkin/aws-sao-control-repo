@@ -49,6 +49,17 @@ exec { 'convert':
   unless => 'Get-WebApplication | findstr portal',
   provider => powershell,
   require => Iis_Virtual_Directory['famis\portal'],
+  notify => Iis_Application['Default Web Site\famis/portal'],
+}
+
+
+iis_application { 'Default Web Site\famis/portal':
+  ensure             => 'present',
+  applicationpool    => 'famis',
+  #applicationname    => 'portal',
+  enabledprotocols   => 'http',
+  virtual_directory   => "'Default Web Site\\famis\\portal'",
+  require           => Exec['convert'],
 }
 
 
