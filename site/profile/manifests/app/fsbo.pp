@@ -53,7 +53,7 @@ iis_application_pool { 'famis':
 #}
 
  
- iis_application { 'Default Web Site\famis/portal':
+ iis_application { 'Default Web Site\famis':
   ensure             => 'present',
   applicationpool    => 'famis',
   applicationname    => 'portal',
