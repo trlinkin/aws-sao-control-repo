@@ -41,12 +41,13 @@ iis_virtual_directory { 'famis\portal':
   sitename     => 'Default Web Site',
   user_name    => 'Administrator',
   password     => 'password',
+  notify       => Exec['convert'],
 }
 
 exec { 'convert':
   command => 'ConvertTo-WebApplication "IIS:Sites\Default Web Site\famis\portal"',
+  unless => 'Get-WebApplication',
   provider => powershell,
-  #unless => 'Get-WebApplication',
   require => Iis_Virtual_Directory['famis\portal'],
 }
 
