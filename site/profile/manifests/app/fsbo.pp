@@ -52,8 +52,7 @@ iis_application_pool { 'famis':
 #  require           => Iis_Virtual_Directory['portal'],
 #}
 
- 
- iis_application { 'Default Web Site\famis/portal':
+iis_application { 'Default Web Site\famis/portal':
   ensure             => 'present',
   applicationpool    => 'famis',
   applicationname    => 'portal',
@@ -65,18 +64,17 @@ iis_application_pool { 'famis':
   'windows' => false
    },
   enabledprotocols   => 'http',
-  virtual_directory   => "'IIS:\\Sites\\Default Web Site\\famis\\portal'",
-  require           => Iis_Virtual_Directory['portal'],
+  virtual_directory   => "'Default Web Site\\famis\\portal'",
+  require           => Iis_Virtual_Directory['famis\portal'],
 }
  
- 
-
-iis_virtual_directory { 'portal':
-     ensure                  => 'present',
-     sitename                => 'Default Web Site',
-     physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
-     user_name               => 'Administrator',
-     password                => 'password',
+iis_virtual_directory { 'famis\portal':
+  ensure       => 'present',
+  application  => '/',
+  physicalpath => 'c:\inetpub\wwwroot\famis\portal',
+  sitename     => 'Default Web Site',
+  user_name    => 'Administrator',
+  password     => 'password',
 }
 
 }
