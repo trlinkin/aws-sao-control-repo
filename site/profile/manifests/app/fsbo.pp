@@ -65,7 +65,7 @@ iis_application_pool { 'famis':
   'windows' => false
    },
   enabledprotocols   => 'http',
-  virtual_directory   => "'Default Web Site\\famis\\portal'",
+  virtual_directory   => "'IIS:\\Sites\\Default Web Site\\famis\\portal'",
   require           => Iis_Virtual_Directory['portal'],
 }
  
