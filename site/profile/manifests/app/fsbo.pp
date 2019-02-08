@@ -36,7 +36,7 @@ iis_application_pool { 'famis':
 
 iis_virtual_directory { 'famis\portal':
   ensure       => 'present',
-  application  => '/',
+  #application  => '/',
   physicalpath => 'c:\inetpub\wwwroot\famis\portal',
   sitename     => 'Default Web Site',
   user_name    => 'Administrator',
