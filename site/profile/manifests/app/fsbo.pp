@@ -49,7 +49,7 @@ exec { 'convert':
   unless => 'Get-WebApplication | findstr portal',
   provider => powershell,
   require => Iis_Virtual_Directory['famis\portal'],
-  notify => Iis_Application['Default Web Site\famis/portal'],
+  notify => Iis_Application['portal'],
 }
 
 
