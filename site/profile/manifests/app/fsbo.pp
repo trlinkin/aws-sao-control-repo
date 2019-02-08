@@ -37,6 +37,7 @@ iis_application_pool { 'famis':
 iis_application { 'Default Web Site\famis/portal':
   ensure             => 'present',
   applicationpool    => 'famis',
+  applicationname    => '/portal'
   authenticationinfo => {
   'iisClientCertificateMapping' => false,
   'clientCertificateMapping' => false,
@@ -48,19 +49,18 @@ iis_application { 'Default Web Site\famis/portal':
   physicalpath       => 'C:\inetpub\wwwroot\famis\portal',
   #sitename           => 'Default Web Site',
   virtual_directory   => "IIS:\\Sites\\Default Web Site\\famis\portal",
-  require           => File['c:\\inetpub\\wwwroot\\famis\\portal'],
+  require           => Iis_Virtual_Directory['portal'],
 }
 
  
 
-#iis_virtual_directory { 'portal':
-#     ensure                  => 'present',
-#     sitename                => 'Default Web Site\famis',
-#     application             => 'portal',
-#     physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
-#     user_name               => 'Administrator',
-#     password                => 'password',
-    # require      => Iis_Application['Default Web Site\famis/portal'],
-#}
+iis_virtual_directory { 'portal':
+     ensure                  => 'present',
+     sitename                => 'Default Web Site\famis/portal',
+     application             => 'portal',
+     physicalpath            => 'c:\\inetpub\\wwwroot\\famis\\portal',
+     user_name               => 'Administrator',
+     password                => 'password',
+}
 
 }
