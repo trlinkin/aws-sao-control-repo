@@ -9,7 +9,7 @@ mod 'puppetlabs-aws', '2.1.0'
 mod 'puppetlabs-azure', '1.3.1'
 mod 'puppetlabs-bolt_shim', '0.1.1'
 mod 'puppetlabs-cd4pe', :latest
-mod 'puppetlabs-chocolatey', '2.0.2'
+mod 'puppetlabs-chocolatey', '3.2.0'
 mod 'puppetlabs-cisco_ios', '0.2.0'
 mod 'puppetlabs-ciscopuppet', '1.10.0'
 mod 'puppetlabs-concat', '4.2.1'
