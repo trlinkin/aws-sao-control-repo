@@ -1,6 +1,6 @@
 {
     "description": "A task to open a single port on a Windows server",
-    "input_method": "stdin",
+    "input_method": "powershell",
     "parameters": {
         "dispname": {
             "description": "The display name of this firewall rule",
