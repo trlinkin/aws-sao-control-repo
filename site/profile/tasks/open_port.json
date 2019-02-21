@@ -1,0 +1,18 @@
+{
+    "description": "A task to open a single port on a Windows server",
+    "input_method": "stdin",
+    "parameters": {
+        "dispname": {
+            "description": "The display name of this firewall rule",
+            "type": "String"
+        },
+        "proto": {
+            "description": "The protocol",
+            "type": "String"
+        },
+        "port": {
+            "description": "Port number",
+            "type": "Integer"
+        }
+    }
+}
