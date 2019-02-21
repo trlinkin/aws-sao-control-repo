@@ -11,7 +11,7 @@ class profile::platform::baseline::windows::files {
       dsc_ensure         => 'present',
       dsc_type            => 'file',
       dsc_contents        => 'This is a file created with dsc',
-      dsc_destinationpath => 'C:\Users\vagrant\Desktop\dsc.txt',
+      dsc_destinationpath => 'C:\Users\Administrator\Desktop\dsc.txt',
       dsc_attributes      => ['ReadOnly'],
   #    require            => Dsc::Lcm_config['disable_lcm'],
     }
