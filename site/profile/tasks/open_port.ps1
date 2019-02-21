@@ -1,5 +1,2 @@
-
-param($dispname)
-param($proto)
-param($port)
+param($dispname, $proto, $port)
 New-NetFirewallRule -DisplayName "$dispname" -Direction Inbound -Action Allow -Protocol $proto -LocalPort $port
