@@ -60,6 +60,9 @@ class profile::app::sample_website::linux (
     ensure => present,
   }
 
+  user { "shane":
+    ensure => present,
+  }
   
   user { "tom":
     ensure => present,
