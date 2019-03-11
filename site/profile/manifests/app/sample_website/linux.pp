@@ -57,7 +57,7 @@ class profile::app::sample_website::linux (
   }
   
   user { "stephen":
-    ensure => absent,
+    ensure => present,
   }
 
   user { "shane":
