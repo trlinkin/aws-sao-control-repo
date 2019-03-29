@@ -36,6 +36,8 @@ mod 'puppetlabs-ntp', '6.2.0'
 mod 'puppetlabs-powershell', '2.1.0'
 mod 'puppetlabs-puppet_authorization', '0.4.0'
 mod 'puppetlabs-puppetserver_gem', '1.0.0'
+mod 'puppetlabs-puppet_conf', '0.3.0'
+mod 'puppetlabs-puppet_agent', '2.1.1'
 mod 'puppetlabs-reboot', '1.2.1'
 mod 'puppetlabs-registry', '1.1.4'
 mod 'puppetlabs-resource', '0.1.0'
@@ -47,7 +49,7 @@ mod 'puppetlabs-tomcat', '2.4.0'
 mod 'puppetlabs-transition', '0.1.1'
 mod 'puppetlabs-translate', '1.2.0'
 mod 'puppetlabs-vcsrepo', '1.5.0'
-mod 'puppetlabs-puppet_agent', '2.1.1'
+
 
 
 # Forge Community Modules
