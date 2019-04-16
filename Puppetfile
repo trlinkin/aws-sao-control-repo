@@ -104,6 +104,7 @@ mod 'yelp-uchiwa', '2.0.0'
 
 mod 'tse-tse_facts',
   :git => 'https://github.com/puppetlabs/tse-module-tse_facts.git'
+  :branch => :control_branch
 
 mod 'demo_cis',
   :git => 'https://github.com/ipcrm/ipcrm-demo_cis.git',
