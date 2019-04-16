@@ -103,7 +103,7 @@ mod 'tse-winntp', '1.0.1'
 mod 'yelp-uchiwa', '2.0.0'
 
 mod 'tse-tse_facts',
-  :git => 'https://github.com/puppetlabs/tse-module-tse_facts.git'
+  :git => 'https://github.com/puppetlabs/tse-module-tse_facts.git',
   :branch => :control_branch
 
 mod 'demo_cis',
